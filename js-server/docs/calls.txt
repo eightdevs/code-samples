@@ -1,0 +1,14 @@
+call users.create --login test1 --password 123
+
+call users.create --login test2 --password 123
+call users.create --login test3 --password 123
+
+call users.getById --id 5daf355dca91792dab40f7db
+call users.getByIds --ids 5daf355dca91792dab40f7db --ids 5daf355dca91792dab40f7db
+
+call users.getByIds --ids 5daf355dca91792dab40f7db --ids 5daf355dca91792dab40f7db
+call users.update --id 5daf40461e1752518ab99a34 --login test2 --password 111
+
+call auth.signin --login test2 --password 111
+
+call chat.getLastMessagesByChats '{ "userId": "5daf404e1e1752518ab99a35", "chatIds": ["5db05ef4f184a8f1f424c46f"] }'
